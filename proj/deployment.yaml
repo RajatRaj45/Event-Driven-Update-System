@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repo1-deployment
+  labels:
+    app: repo1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: repo1
+  template:
+    metadata:
+      labels:
+        app: repo1
+    spec:
+      containers:
+      - name: repo1-container
+        image: rajatraj45/repo1:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80  # Change if your app uses a different port
