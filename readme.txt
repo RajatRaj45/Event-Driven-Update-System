@@ -1,13 +1,13 @@
-prerequisites:
+Prerequisites:
 - minikube
 - ngrok
 - kubectl
 - python
 
-steps:
+Steps:
 - minikube start
 - run "webhook_listener.py"
 - ngrok http 5000
-- setup dockerhub webhook using *ngrok-url*/dockerhub-webhook
+- Setup dockerhub webhook using *ngrok-url*/dockerhub-webhook
 - kubectl apply -f deployment.yaml
-- push new image on dockerhub for updating the deployment 
+- Push new image on dockerhub for updating the deployment 
